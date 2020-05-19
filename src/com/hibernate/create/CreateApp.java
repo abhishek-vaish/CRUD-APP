@@ -13,8 +13,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.util.Scanner;
+
 public class CreateApp {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         SessionFactory sessionFactory = new Configuration()
                 .configure("hibernate.cnf.xml")
                 .addAnnotatedClass(Student.class)
@@ -22,9 +25,15 @@ public class CreateApp {
 
         Session session = sessionFactory.getCurrentSession();
         Transaction transaction = null;
+        System.out.print("First Name: ");
+        String firstName = scanner.next();
+        System.out.print("Last Name: ");
+        String lastName = scanner.next();
+        System.out.print("Email: ");
+        String email = scanner.next();
 
         try {
-            Student student = new Student("Abhishek", "Vaish", "abhishekv5055@gmail.com");
+            Student student = new Student(firstName, lastName, email);
             transaction = session.beginTransaction();
             session.save(student);
             transaction.commit();
