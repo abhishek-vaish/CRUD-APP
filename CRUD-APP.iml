@@ -9,6 +9,9 @@
         <fileset id="fileset2" name="Dispatcher Servlet" removed="false">
           <file>file://$MODULE_DIR$/web/WEB-INF/dispatcher-servlet.xml</file>
         </fileset>
+        <fileset id="fileset3" name="Bean Config" removed="false">
+          <file>file://$MODULE_DIR$/src/com/hibernate/create/bean-config.xml</file>
+        </fileset>
       </configuration>
     </facet>
     <facet type="hibernate" name="Hibernate">
