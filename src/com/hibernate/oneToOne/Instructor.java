@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Instructor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
     @Column(name = "firstname")
@@ -24,18 +24,17 @@ public class Instructor {
     private String lastname;
     @Column(name = "email")
     private String email;
-    @Column(name = "instructor_id")
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "instructor_id")
     private InstructorDetails instructorId;
 
     public Instructor() {
     }
 
-    public Instructor(String firstname, String lastname, String email, InstructorDetails instructorId) {
+    public Instructor(String firstname, String lastname, String email) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
-        this.instructorId = instructorId;
     }
 
     @Override
