@@ -29,7 +29,6 @@ public class ReadApp {
             Query query = session.createQuery("from Student");
             List list = query.list();
             System.out.println(list);
-            // session.save(student);
             session.getTransaction().commit();
         } finally {
             sessionFactory.close();
