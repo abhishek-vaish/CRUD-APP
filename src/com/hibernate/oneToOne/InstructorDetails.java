@@ -8,17 +8,15 @@
 
 package com.hibernate.oneToOne;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "instructor_details")
 public class InstructorDetails {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "instructor_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "youtube_channel")
     private String youtubeChannel;
@@ -28,8 +26,7 @@ public class InstructorDetails {
     public InstructorDetails() {
     }
 
-    public InstructorDetails(int id, String youtubeChannel, String hobby) {
-        this.id = id;
+    public InstructorDetails(String youtubeChannel, String hobby) {
         this.youtubeChannel = youtubeChannel;
         this.hobby = hobby;
     }
