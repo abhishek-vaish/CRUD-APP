@@ -24,14 +24,17 @@ public class Instructor {
     private String lastname;
     @Column(name = "email")
     private String email;
+    @Column(name = "instructor_id")
+    private int instructorId;
 
     public Instructor() {
     }
 
-    public Instructor(String firstname, String lastname, String email) {
+    public Instructor(String firstname, String lastname, String email, int instructorId) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
+        this.instructorId = instructorId;
     }
 
     @Override
@@ -41,11 +44,20 @@ public class Instructor {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
+                ", instructorId=" + instructorId +
                 '}';
     }
 
     public int getId() {
         return id;
+    }
+
+    public int getInstructorId() {
+        return instructorId;
+    }
+
+    public void setInstructorId(int instructorId) {
+        this.instructorId = instructorId;
     }
 
     public void setId(int id) {
