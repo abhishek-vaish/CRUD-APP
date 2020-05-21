@@ -25,12 +25,13 @@ public class Instructor {
     @Column(name = "email")
     private String email;
     @Column(name = "instructor_id")
-    private int instructorId;
+    @OneToOne(cascade = CascadeType.ALL)
+    private InstructorDetails instructorId;
 
     public Instructor() {
     }
 
-    public Instructor(String firstname, String lastname, String email, int instructorId) {
+    public Instructor(String firstname, String lastname, String email, InstructorDetails instructorId) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
@@ -52,11 +53,11 @@ public class Instructor {
         return id;
     }
 
-    public int getInstructorId() {
+    public InstructorDetails getInstructorId() {
         return instructorId;
     }
 
-    public void setInstructorId(int instructorId) {
+    public void setInstructorId(InstructorDetails instructorId) {
         this.instructorId = instructorId;
     }
 
