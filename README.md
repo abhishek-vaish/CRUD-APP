@@ -5,7 +5,7 @@
 Creating CRUD App using Hibernate and Spring ORM
 
 
-##Database Structure
+## Database Structure
 
 
 ![Image_of_database_structure](src/img/database_structure.PNG)
