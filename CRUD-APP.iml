@@ -17,7 +17,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="hibernate.cnf.xml" value="7874696b-4942-4f24-b6f6-dfaa961f33a9" />
+          <unit-entry name="hibernate.cnf.xml" value="c100a2dd-6274-483c-91ce-43306666f235" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cnf.xml" />
@@ -27,7 +27,7 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
-          <factory-entry name="Entities" />
+          <factory-entry name="Entities" value="c100a2dd-6274-483c-91ce-43306666f235" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
