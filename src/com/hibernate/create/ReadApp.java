@@ -10,7 +10,6 @@ package com.hibernate.create;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
@@ -24,15 +23,14 @@ public class ReadApp {
                         Student.class);
 
         Session session = sessionFactory.getCurrentSession();
-        Transaction transaction = null;
 
         try {
-            transaction = session.beginTransaction();
+            session.beginTransaction();
             Query query = session.createQuery("from Student");
             List list = query.list();
             System.out.println(list);
             // session.save(student);
-            transaction.commit();
+            session.getTransaction().commit();
         } finally {
             sessionFactory.close();
         }
