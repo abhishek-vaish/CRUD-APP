@@ -10,7 +10,6 @@ package com.hibernate.create;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 
 import java.util.Scanner;
 
@@ -24,7 +23,6 @@ public class CreateApp {
                         Student.class);
 
         Session session = sessionFactory.getCurrentSession();
-        Transaction transaction = null;
         System.out.print("First Name: ");
         String firstName = scanner.next();
         System.out.print("Last Name: ");
@@ -34,12 +32,9 @@ public class CreateApp {
 
         try {
             Student student = new Student(firstName, lastName, email);
-            transaction = session.beginTransaction();
+            session.beginTransaction();
             session.save(student);
-            transaction.commit();
-        } catch (RuntimeException e) {
-            transaction.rollback();
-            throw e;
+            session.getTransaction().commit();
         } finally {
             sessionFactory.close();
         }
